@@ -2688,9 +2688,7 @@ export const onPrerenderRoute =
           ? {
               initialHeaders: {
                 ...initialHeaders,
-                ...(shouldSkipVaryHeader
-                  ? {}
-                  : { vary: rscVaryHeader }),
+                ...(shouldSkipVaryHeader ? {} : { vary: rscVaryHeader }),
               },
             }
           : {}),
@@ -2737,9 +2735,7 @@ export const onPrerenderRoute =
             ? {
                 initialHeaders: {
                   ...initialHeaders,
-                  ...(shouldSkipVaryHeader
-                    ? {}
-                    : { vary: rscVaryHeader }),
+                  ...(shouldSkipVaryHeader ? {} : { vary: rscVaryHeader }),
                   ...((outputPathData || outputPathPrefetchData)?.endsWith(
                     '.json'
                   )

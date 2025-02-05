@@ -2139,9 +2139,7 @@ export async function serverBuild({
                 },
               ],
               dest: path.posix.join('/', entryDirectory, '/index.rsc'),
-              headers: shouldSkipVaryHeader
-                ? {}
-                : { vary: rscVaryHeader },
+              headers: shouldSkipVaryHeader ? {} : { vary: rscVaryHeader },
               continue: true,
               override: true,
             },
@@ -2158,9 +2156,7 @@ export async function serverBuild({
                 },
               ],
               dest: path.posix.join('/', entryDirectory, '/$1.rsc'),
-              headers: shouldSkipVaryHeader
-                ? {}
-                : { vary: rscVaryHeader },
+              headers: shouldSkipVaryHeader ? {} : { vary: rscVaryHeader },
               continue: true,
               override: true,
             },
