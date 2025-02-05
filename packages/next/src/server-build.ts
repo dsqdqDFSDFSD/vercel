@@ -2100,7 +2100,7 @@ export async function serverBuild({
                       `/__index${RSC_PREFETCH_SUFFIX}`
                     ),
                     headers: shouldSkipVaryHeader
-                      ? {}
+                      ? undefined
                       : { vary: rscVaryHeader },
                     continue: true,
                     override: true,
@@ -2123,7 +2123,7 @@ export async function serverBuild({
                       `/$1${RSC_PREFETCH_SUFFIX}`
                     ),
                     headers: shouldSkipVaryHeader
-                      ? {}
+                      ? undefined
                       : { vary: rscVaryHeader },
                     continue: true,
                     override: true,
@@ -2139,7 +2139,9 @@ export async function serverBuild({
                 },
               ],
               dest: path.posix.join('/', entryDirectory, '/index.rsc'),
-              headers: shouldSkipVaryHeader ? {} : { vary: rscVaryHeader },
+              headers: shouldSkipVaryHeader
+                ? undefined
+                : { vary: rscVaryHeader },
               continue: true,
               override: true,
             },
@@ -2156,7 +2158,9 @@ export async function serverBuild({
                 },
               ],
               dest: path.posix.join('/', entryDirectory, '/$1.rsc'),
-              headers: shouldSkipVaryHeader ? {} : { vary: rscVaryHeader },
+              headers: shouldSkipVaryHeader
+                ? undefined
+                : { vary: rscVaryHeader },
               continue: true,
               override: true,
             },
